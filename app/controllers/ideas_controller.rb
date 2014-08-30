@@ -4,7 +4,8 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+      @q = Idea.search(params[:q])
+      @ideas = @q.result  
   end
 
   # GET /ideas/1

@@ -1,5 +1,11 @@
 <h1>Listing ideas</h1>
 
+<%= search_form_for @q do |f| %>
+  <%= f.label :description_cont %>
+  <%= f.search_field :description_cont %>
+  <%= f.submit %>
+<% end %>
+
 <% @ideas.in_groups_of(3) do |group| %>
   <div class="row">
     <% group.compact.each do |idea| %>
